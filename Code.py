@@ -84,6 +84,25 @@ class Calculatrice(QWidget):
             self.nb.clear()
             self.resFactoriel.clear()
 
+    def calculer valeurAbsolue(self):
+        try:
+            texte=self.nb.text()
+            n=int(texte)
+
+            if n<0:
+                QMessageBox.critical(self, "Erreur", "La factorielle n'est définie que pour les entiers positifs. ")
+                self.nb.clear()
+                self.resFactoriel.clear()
+            else:
+                resultat=1
+                for i in range(1,n+1):
+                    resultat*=i
+
+                self.resFactoriel.setText(f"{resultat}")
+        except ValueError as e:
+            QMessageBox.critical(self, "Erreur", "Veuillez entrer un entier positif valide.")
+            self.nb.clear()
+            self.resFactoriel.clear() 
 
 # Programme principal
 app = QApplication(sys.argv)
