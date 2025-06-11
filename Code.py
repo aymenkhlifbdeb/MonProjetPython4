@@ -14,7 +14,7 @@ class Calculatrice(QWidget):
         self.boutonFactoriel.clicked.connect(self.calculer_factorielle)
 
 
-    def addition(self):
+    def additionner(self):
         try:
             x = float(self.champX.text())
             y = float(self.champY.text())
@@ -64,7 +64,7 @@ class Calculatrice(QWidget):
             self.champY.clear()
             self.labelResultat.clear()
 
-    def calculer_factorielle(self):
+    def calculer_Factorielle(self):
         try:
             texte=self.nb.text()
             n=int(texte)
